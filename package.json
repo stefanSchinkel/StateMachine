@@ -1,0 +1,15 @@
+{
+  "name": "statemachine",
+  "version": "0.0.1",
+  "description": "A simple JS state machine",
+  "main": "StateMachine.js",
+  "dependencies": {
+    "unit.js": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node StateMachineTest.js"
+  },
+  "author": "Stefan Schinkel",
+  "license": "ISC"
+}
