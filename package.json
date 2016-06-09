@@ -11,5 +11,5 @@
     "test": "node StateMachineTest.js"
   },
   "author": "Stefan Schinkel",
-  "license": "ISC"
+  "license": "BSD"
 }
