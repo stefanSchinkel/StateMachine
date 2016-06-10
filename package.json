@@ -3,12 +3,13 @@
   "version": "0.0.1",
   "description": "A simple JS state machine",
   "main": "StateMachine.js",
-  "dependencies": {
-    "unit.js": "^2.0.0"
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "node StateMachineTest.js"
+    "test": "mocha StateMachineTest.js"
   },
   "author": "Stefan Schinkel",
   "license": "BSD"
