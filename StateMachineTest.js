@@ -7,6 +7,7 @@ describe('StateMachine', function () {
   // fixture
   beforeEach(function () {
     sm = new StateMachine.StateMachine();
+    sm.addTransition(1);
     sm.addTransition(1, 'a', 1);
     sm.addTransition(1, 'a', 1);
     sm.addTransition(1, 'b', 2);
@@ -14,16 +15,25 @@ describe('StateMachine', function () {
     sm.addTransition(2, 'c', 3);
   });
 
+
   // test cases
+
+  it('should find the initial state', function () {
+    assert.equal(1, sm.currentState);
+  });
   it('should reject aaa', function () {
     assert.equal(false, sm.accepts('aaa'));
   });
-  it('should accept aaa', function () {
-    assert.equal(true, sm.accepts('aaabc'));
-  });
-  it('should reject aaa', function () {
+  it('should accept abc', function () {
     assert.equal(true, sm.accepts('abc'));
   });
+  it('should accept aaabc', function () {
+    assert.equal(true, sm.accepts('aaabc'));
+  });
+  it('should accept aad', function () {
+    assert.equal(true, sm.accepts('aad'));
+  });
+
 
 });
 ;

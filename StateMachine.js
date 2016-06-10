@@ -4,11 +4,18 @@
 
 function StateMachine() {
   this.states = {};
-  this.currentState = 1;
-  this.finalStates = [1];
+  this.finalStates = [3];
+
 }
 
 StateMachine.prototype.addTransition = function (start, val, next) {
+
+  if (next === undefined){
+      if (val === undefined) {
+          this.currentState = start;
+      } else {
+      }
+  }
 
   if (this.states.hasOwnProperty(start)) {
     this.states[start][val] = next;
@@ -27,7 +34,7 @@ StateMachine.prototype.printTransitionTable = function () {
 };
 
 StateMachine.prototype.process = function (input) {
-  console.log("Current state: " +  this.currentState + " Input " + input);
+  // console.log("Current state: " +  this.currentState + " Input " + input);
   var innerDict = this.states[this.currentState];
 
   if (innerDict === undefined){
@@ -37,9 +44,9 @@ StateMachine.prototype.process = function (input) {
   if (innerDict[input] !== undefined) {
     this.currentState = innerDict[input];
     newState = innerDict[input];
-    console.log("New state: " + newState);
+    return true;
   } else {
-    throw "Not a a legal transition";
+    return false;
   }
 };
 
@@ -53,7 +60,7 @@ StateMachine.prototype.accepts = function (str) {
   } else {
     return false;
   }
-  console.log(" == Final State : " + this.currentState + " == ");
+  // console.log(" == Final State : " + this.currentState + " == ");
 };
 
 // var sm = new StateMachine();
