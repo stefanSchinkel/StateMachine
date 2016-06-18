@@ -12,5 +12,5 @@
     "test": "mocha StateMachineTest.js"
   },
   "author": "Stefan Schinkel",
-  "license": "BSD"
+  "license": "MIT"
 }
