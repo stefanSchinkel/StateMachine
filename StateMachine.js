@@ -2,7 +2,6 @@
 /*jshint -W081 */
 "use strict";
 
-
 function StateMachine() {
   this.states = {};
   this.finalStates = [3];
@@ -39,7 +38,7 @@ StateMachine.prototype.process = function (input) {
   var innerDict = this.states[this.currentState];
 
   if (innerDict === undefined){
-      throw "Not a a legal transition";
+      throw "Not a legal transition";
   }
   var newState;
   if (innerDict[input] !== undefined) {
@@ -61,20 +60,8 @@ StateMachine.prototype.accepts = function (str) {
   } else {
     return false;
   }
-  // console.log(" == Final State : " + this.currentState + " == ");
 };
 
-// var sm = new StateMachine();
-// sm.printTransitionTable();
-// sm.addTransition(1, 'a', 1);
-// sm.addTransition(1, 'b', 2);
-// sm.addTransition(1, 'c', 3);
-// sm.addTransition(2, 'c', 3);
-
-// sm.printTransitionTable();
-// // sm.process('a');
-// // sm.process('b');
-// sm.accepts('aaabcd');
 
 module.exports = {
   StateMachine: StateMachine
