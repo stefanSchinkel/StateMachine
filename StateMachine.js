@@ -2,6 +2,7 @@
 /*jshint -W081 */
 "use strict";
 
+
 function StateMachine() {
   this.states = {};
   this.finalStates = [3];
