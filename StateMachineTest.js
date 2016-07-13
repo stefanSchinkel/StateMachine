@@ -37,5 +37,8 @@ describe('StateMachine', function () {
     assert.throws(function () { sm.accepts('ddac')},"Not a legal transition");
   });
 
+  it('should reject xyz', function () {
+    assert.equal(false, sm.accepts('xyz'));
+  });
 });
 ;
